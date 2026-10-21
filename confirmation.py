@@ -7,7 +7,7 @@ def classify_confirmation(record: dict) -> str:
       return "REVIEW"
     elif record["reply"]=="confirmed":
 
-      if (record["reply_version"]==record["booking_version"] and record["evidence_id"] is not None and record["evidence_id"]!=""):
+      if (record["reply_version"]==record["booking_version"] and record["evidence_id"] is not None and record["evidence_id"].strip()!=""):
         return "READY"
 
       else: return "REVIEW"
